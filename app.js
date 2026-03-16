@@ -90,53 +90,98 @@ function closeValuationForm() {
   document.body.style.overflow = '';
 }
 
+// --- Mailchimp Integration ---
+var MC_URL = 'https://firstcapinvestment.us18.list-manage.com/subscribe/post-json?u=989ce2d8362861bfc6ffbc66e&id=ecf0b846f3&f_id=00a6b2e6f0';
+var MC_HONEYPOT = 'b_989ce2d8362861bfc6ffbc66e_ecf0b846f3';
+
+function sendToMailchimp(params, callback) {
+  var cbName = 'mc_cb_' + Date.now();
+  params += '&c=' + cbName;
+  window[cbName] = function(data) {
+    callback(data);
+    delete window[cbName];
+    document.getElementById('mc-jsonp-' + cbName)?.remove();
+  };
+  var s = document.createElement('script');
+  s.id = 'mc-jsonp-' + cbName;
+  s.src = MC_URL + '&' + params;
+  document.body.appendChild(s);
+}
+
 function submitValuationForm(e) {
   e.preventDefault();
-  const form = document.getElementById('valuationForm');
-  const submitBtn = document.getElementById('submitBtn');
-  const success = document.getElementById('formSuccess');
+  var form = document.getElementById('valuationForm');
+  var submitBtn = document.getElementById('submitBtn');
+  var success = document.getElementById('formSuccess');
+  var errorEl = document.getElementById('formError');
 
-  // Collect form data
-  const data = new FormData(form);
-  const formObj = {};
-  data.forEach((val, key) => { formObj[key] = val; });
+  var data = new FormData(form);
+  var formObj = {};
+  data.forEach(function(val, key) { formObj[key] = val; });
 
-  // Show loading state
   submitBtn.textContent = 'Submitting...';
   submitBtn.disabled = true;
+  if (errorEl) errorEl.style.display = 'none';
 
-  // Send lead via email using mailto fallback
-  // Build a mailto link as a simple lead delivery method
-  const subject = encodeURIComponent('New Property Valuation Request - ' + formObj.propertyAddress);
-  const body = encodeURIComponent(
-    'New Valuation Request\n' +
-    '=====================\n\n' +
-    'Name: ' + formObj.firstName + ' ' + formObj.lastName + '\n' +
-    'Email: ' + formObj.email + '\n' +
-    'Phone: ' + formObj.phone + '\n' +
-    'Property: ' + formObj.propertyAddress + '\n' +
-    'Type: ' + formObj.propertyType + '\n' +
-    'Size: ' + (formObj.units || 'Not specified') + '\n' +
-    'Timeline: ' + (formObj.timeline || 'Not specified') + '\n' +
-    'Notes: ' + (formObj.notes || 'None') + '\n'
-  );
+  // Build Mailchimp params
+  var params = 'EMAIL=' + encodeURIComponent(formObj.email)
+    + '&FNAME=' + encodeURIComponent(formObj.firstName)
+    + '&LNAME=' + encodeURIComponent(formObj.lastName)
+    + '&PHONE=' + encodeURIComponent(formObj.phone)
+    + '&ADDRESS=' + encodeURIComponent(formObj.propertyAddress)
+    + '&COMPANY=' + encodeURIComponent(
+        'Valuation Request | Type: ' + formObj.propertyType
+        + ' | Size: ' + (formObj.units || 'N/A')
+        + ' | Timeline: ' + (formObj.timeline || 'N/A')
+        + ' | Notes: ' + (formObj.notes || 'None')
+      )
+    + '&' + MC_HONEYPOT + '=';
 
-  // Open mailto in background
-  const mailLink = document.createElement('a');
-  mailLink.href = 'mailto:Farhad@FirstCapInvestment.com?subject=' + subject + '&body=' + body;
-  mailLink.style.display = 'none';
-  document.body.appendChild(mailLink);
-  mailLink.click();
-  document.body.removeChild(mailLink);
-
-  // Show success state after brief delay
-  setTimeout(function() {
-    form.style.display = 'none';
-    success.style.display = 'block';
+  sendToMailchimp(params, function(resp) {
     submitBtn.textContent = 'Submit Request';
     submitBtn.disabled = false;
-    form.reset();
-  }, 600);
+    if (resp.result === 'success' || (resp.msg && resp.msg.indexOf('already subscribed') > -1)) {
+      form.style.display = 'none';
+      success.style.display = 'block';
+      form.reset();
+    } else {
+      if (errorEl) {
+        errorEl.textContent = 'Something went wrong. Please try again or email us directly.';
+        errorEl.style.display = 'block';
+      }
+    }
+  });
+}
+
+// --- Newsletter Subscribe ---
+function submitNewsletter(e) {
+  e.preventDefault();
+  var form = e.target;
+  var emailInput = form.querySelector('input[type="email"]');
+  var btn = form.querySelector('button');
+  var msg = form.querySelector('.newsletter__msg');
+  var email = emailInput.value.trim();
+  if (!email) return;
+
+  btn.textContent = 'Subscribing...';
+  btn.disabled = true;
+  if (msg) { msg.textContent = ''; msg.className = 'newsletter__msg'; }
+
+  var params = 'EMAIL=' + encodeURIComponent(email) + '&' + MC_HONEYPOT + '=';
+
+  sendToMailchimp(params, function(resp) {
+    btn.textContent = 'Subscribe';
+    btn.disabled = false;
+    if (resp.result === 'success') {
+      if (msg) { msg.textContent = 'You\'re subscribed! We\'ll keep you updated on the LA market.'; msg.className = 'newsletter__msg newsletter__msg--success'; }
+      emailInput.value = '';
+    } else if (resp.msg && resp.msg.indexOf('already subscribed') > -1) {
+      if (msg) { msg.textContent = 'You\'re already on our list!'; msg.className = 'newsletter__msg newsletter__msg--success'; }
+      emailInput.value = '';
+    } else {
+      if (msg) { msg.textContent = 'Something went wrong. Please try again.'; msg.className = 'newsletter__msg newsletter__msg--error'; }
+    }
+  });
 }
 
 // Close modal on overlay click

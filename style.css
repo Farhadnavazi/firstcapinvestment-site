@@ -1559,3 +1559,112 @@ select.form-input {
     font-size: 24px;
   }
 }
+
+/* --- FORM ERROR --- */
+.form-error {
+  background: rgba(220, 53, 69, 0.15);
+  border: 1px solid rgba(220, 53, 69, 0.4);
+  color: #ff6b6b;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+/* --- NEWSLETTER SECTION --- */
+.newsletter {
+  background: linear-gradient(135deg, #0d1d35 0%, #0a1628 100%);
+  padding: 80px 0;
+  border-top: 1px solid var(--white-10);
+  border-bottom: 1px solid var(--white-10);
+}
+.newsletter__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 48px;
+}
+.newsletter__content {
+  flex: 1;
+  max-width: 480px;
+}
+.newsletter__title {
+  font-family: var(--font-display);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 12px;
+}
+.newsletter__text {
+  font-size: 15px;
+  color: var(--white-70);
+  line-height: 1.6;
+}
+.newsletter__form {
+  flex: 1;
+  max-width: 480px;
+}
+.newsletter__input-group {
+  display: flex;
+  gap: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--white-20);
+  background: rgba(255,255,255,0.05);
+  transition: border-color 0.3s;
+}
+.newsletter__input-group:focus-within {
+  border-color: var(--gold);
+}
+.newsletter__input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  padding: 14px 18px;
+  font-size: 15px;
+  color: var(--white);
+  font-family: var(--font-body);
+  outline: none;
+}
+.newsletter__input::placeholder {
+  color: var(--white-50);
+}
+.newsletter__btn {
+  border-radius: 0;
+  padding: 14px 28px;
+  white-space: nowrap;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+.newsletter__msg {
+  font-size: 13px;
+  margin-top: 10px;
+  min-height: 18px;
+}
+.newsletter__msg--success {
+  color: #4ade80;
+}
+.newsletter__msg--error {
+  color: #ff6b6b;
+}
+.newsletter__disclaimer {
+  font-size: 12px;
+  color: var(--white-40);
+  margin-top: 8px;
+}
+
+@media (max-width: 768px) {
+  .newsletter__inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 32px;
+  }
+  .newsletter__content,
+  .newsletter__form {
+    max-width: 100%;
+  }
+  .newsletter__title {
+    font-size: 26px;
+  }
+}

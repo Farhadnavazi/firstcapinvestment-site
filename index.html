@@ -1178,6 +1178,7 @@
         <label class="form-label" for="v-notes">Additional Notes</label>
         <textarea id="v-notes" name="notes" class="form-input form-textarea" rows="3" placeholder="Tell us anything else about the property or your goals..."></textarea>
       </div>
+      <div class="form-error" id="formError" style="display:none;"></div>
       <button type="submit" class="btn btn--gold btn--large form-submit" id="submitBtn">Submit Request</button>
       <p class="form-disclaimer">Your information is confidential and will only be used to provide your valuation. We never share your data.</p>
     </form>
@@ -1190,6 +1191,26 @@
     </div>
   </div>
 </div>
+
+<!-- NEWSLETTER -->
+<section class="newsletter" id="newsletter">
+  <div class="section-container">
+    <div class="newsletter__inner reveal">
+      <div class="newsletter__content">
+        <h2 class="newsletter__title">Stay Ahead of the Market</h2>
+        <p class="newsletter__text">Get weekly insights on LA commercial real estate — market trends, new listings, and investment opportunities delivered to your inbox.</p>
+      </div>
+      <form class="newsletter__form" onsubmit="submitNewsletter(event)">
+        <div class="newsletter__input-group">
+          <input type="email" class="newsletter__input" placeholder="Enter your email address" required aria-label="Email address">
+          <button type="submit" class="btn btn--gold newsletter__btn">Subscribe</button>
+        </div>
+        <p class="newsletter__msg"></p>
+        <p class="newsletter__disclaimer">No spam. Unsubscribe anytime.</p>
+      </form>
+    </div>
+  </div>
+</section>
 
 <!-- FOOTER -->
 <footer class="footer" id="contact">
