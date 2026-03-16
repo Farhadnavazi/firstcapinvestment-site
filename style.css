@@ -719,6 +719,7 @@ img { max-width: 100%; display: block; }
 .sold-card {
   background: var(--navy);
   border: 1px solid var(--white-10);
+  border-top: 3px solid var(--gold);
   border-radius: 8px;
   overflow: hidden;
   transition: transform var(--transition-interactive), box-shadow var(--transition-interactive);
@@ -727,40 +728,22 @@ img { max-width: 100%; display: block; }
   transform: translateY(-3px);
   box-shadow: 0 12px 32px rgba(0,0,0,0.25);
 }
-.sold-card__image {
-  height: 160px;
-  position: relative;
-}
-.sold-card__image--1 { background: linear-gradient(135deg, #1a2a4a 0%, #253a5e 100%); }
-.sold-card__image--2 { background: linear-gradient(135deg, #1c2f52 0%, #2a3a5a 100%); }
-.sold-card__image--3 { background: linear-gradient(135deg, #152542 0%, #1a2a4a 100%); }
-.sold-card__image--4 { background: linear-gradient(135deg, #253a5e 0%, #1c2f52 100%); }
 
-.sold-card__image::after {
-  content: '🏢';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 28px;
-  opacity: 0.12;
-}
 
 .sold-card__badge {
-  position: absolute;
-  top: 12px;
-  left: 12px;
+  display: inline-block;
   background: rgba(220, 53, 69, 0.9);
   color: #fff;
-  padding: 4px 14px;
+  padding: 3px 10px;
   border-radius: 3px;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
+  margin-bottom: 8px;
 }
 .sold-card__body {
-  padding: 18px 20px;
+  padding: 16px 18px;
 }
 .sold-card__title {
   font-family: var(--font-display);
