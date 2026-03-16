@@ -152,3 +152,17 @@ document.addEventListener('keydown', function(e) {
     closeValuationForm();
   }
 });
+
+// --- Property Details Toggle ---
+function togglePropertyDetails(id) {
+  var panel = document.getElementById(id);
+  var link = panel.previousElementSibling.querySelector('.property-card__link');
+  if (panel.style.display === 'none' || panel.style.display === '') {
+    panel.style.display = 'block';
+    link.textContent = 'Hide Details \u2191';
+    panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  } else {
+    panel.style.display = 'none';
+    link.textContent = 'View Details \u2192';
+  }
+}

@@ -20,10 +20,10 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>First Capital Investment Realty — Los Angeles Commercial Real Estate</title>
-<meta name="description" content="First Capital Investment Realty is a boutique commercial real estate brokerage in Los Angeles specializing in multifamily, retail, and value-add properties.">
-<meta property="og:title" content="First Capital Investment Realty — Los Angeles CRE">
-<meta property="og:description" content="35+ Years, $100M+ in Closed Transactions. Multifamily, Retail, Value-Add.">
+<title>First Capital Investment Realty — Los Angeles Commercial & Residential Real Estate</title>
+<meta name="description" content="First Capital Investment Realty is a full-service real estate brokerage in Los Angeles specializing in commercial investments, residential sales, multifamily, retail, and value-add properties.">
+<meta property="og:title" content="First Capital Investment Realty — Los Angeles Commercial & Residential Real Estate">
+<meta property="og:description" content="35+ Years, $100M+ in Closed Transactions. Commercial Investments, Residential Sales, Multifamily, Retail & Value-Add.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -95,8 +95,8 @@
   <div class="hero__overlay"></div>
   <div class="hero__content reveal">
     <p class="hero__eyebrow">Beverly Hills · West Hills · Claremont · Los Angeles</p>
-    <h1 class="hero__title">Los Angeles<br>Commercial Real Estate Experts</h1>
-    <p class="hero__subtitle">35+ Years &nbsp;|&nbsp; $100M+ in Closed Transactions &nbsp;|&nbsp; Multifamily · Retail · Value-Add</p>
+    <h1 class="hero__title">Los Angeles<br>Real Estate Experts</h1>
+    <p class="hero__subtitle">35+ Years &nbsp;|&nbsp; $100M+ in Closed Transactions &nbsp;|&nbsp; Commercial · Residential · Multifamily · Retail</p>
     <div class="hero__ctas">
       <a href="#properties" class="btn btn--gold">View Properties</a>
       <button class="btn btn--outline" onclick="openValuationForm()">Free Property Valuation</button>
@@ -135,9 +135,9 @@
     <div class="section-header reveal">
       <h2 class="section-title">Active Listings</h2>
       <div class="section-accent"></div>
-      <p class="section-subtitle">Current commercial investment opportunities</p>
+      <p class="section-subtitle">Current commercial and residential opportunities</p>
     </div>
-    <div class="properties__grid properties__grid--two">
+    <div class="properties__grid properties__grid--three">
       <div class="property-card reveal">
         <div class="property-card__image">
           <img src="./91-unit-rendering.jpg" alt="91-Unit Senior Affordable Housing rendering at 14715 Burbank Blvd, Van Nuys" class="property-card__photo">
@@ -151,7 +151,51 @@
             <span>Senior Affordable</span>
             <span>Multifamily</span>
           </div>
-          <a href="#" class="property-card__link" target="_blank" rel="noopener noreferrer">View Details →</a>
+          <a href="javascript:void(0)" class="property-card__link" onclick="togglePropertyDetails('prop-senior-housing')">View Details →</a>
+        </div>
+        <div class="property-card__expanded" id="prop-senior-housing" style="display:none;">
+          <div class="property-card__expanded-inner">
+            <h4>Property Overview</h4>
+            <p>New construction 91-unit senior affordable housing community located at 14715 Burbank Blvd. in Van Nuys, CA. This development will serve the growing demand for quality senior living in the San Fernando Valley.</p>
+            <div class="property-card__specs">
+              <div class="property-card__spec">
+                <span class="property-card__spec-label">Property Type</span>
+                <span class="property-card__spec-value">Senior Affordable Housing</span>
+              </div>
+              <div class="property-card__spec">
+                <span class="property-card__spec-label">Units</span>
+                <span class="property-card__spec-value">91</span>
+              </div>
+              <div class="property-card__spec">
+                <span class="property-card__spec-label">Status</span>
+                <span class="property-card__spec-value">Development</span>
+              </div>
+              <div class="property-card__spec">
+                <span class="property-card__spec-label">Location</span>
+                <span class="property-card__spec-value">Van Nuys, CA 91401</span>
+              </div>
+              <div class="property-card__spec">
+                <span class="property-card__spec-label">Submarket</span>
+                <span class="property-card__spec-value">San Fernando Valley</span>
+              </div>
+              <div class="property-card__spec">
+                <span class="property-card__spec-label">Zoning</span>
+                <span class="property-card__spec-value">Multifamily Residential</span>
+              </div>
+            </div>
+            <h4>Key Highlights</h4>
+            <ul class="property-card__highlights">
+              <li>New ground-up construction with modern design and amenities</li>
+              <li>100% affordable senior housing — strong demand in the San Fernando Valley</li>
+              <li>Proximity to public transit, shopping, and medical facilities</li>
+              <li>Tax credit and public financing eligible</li>
+            </ul>
+            <div class="property-card__cta">
+              <p>For offering memorandum and additional details, contact:</p>
+              <a href="mailto:Farhad@FirstCapInvestment.com?subject=Inquiry%3A%2091-Unit%20Senior%20Housing%20-%2014715%20Burbank%20Blvd" class="btn btn--gold btn--sm">Request Information</a>
+              <a href="tel:+13102735393" class="btn btn--outline btn--sm">Call (310) 273-5393</a>
+            </div>
+          </div>
         </div>
       </div>
       <div class="property-card reveal">
@@ -171,7 +215,116 @@
             <span>Market/C-Store</span>
             <span>NNN Lease</span>
           </div>
-          <a href="#" class="property-card__link" target="_blank" rel="noopener noreferrer">View Details →</a>
+          <a href="javascript:void(0)" class="property-card__link" onclick="togglePropertyDetails('prop-gas-station')">View Details →</a>
+        </div>
+        <div class="property-card__expanded" id="prop-gas-station" style="display:none;">
+          <div class="property-card__expanded-inner">
+            <h4>Property Overview</h4>
+            <p>Fully operational gas station with attached convenience store/market available for lease on Paradise Road in Las Vegas, NV. High-traffic location near the Las Vegas Strip with excellent visibility and drive-by counts.</p>
+            <div class="property-card__specs">
+              <div class="property-card__spec">
+                <span class="property-card__spec-label">Property Type</span>
+                <span class="property-card__spec-value">Gas Station / C-Store</span>
+              </div>
+              <div class="property-card__spec">
+                <span class="property-card__spec-label">Lease Rate</span>
+                <span class="property-card__spec-value">$20,000/month</span>
+              </div>
+              <div class="property-card__spec">
+                <span class="property-card__spec-label">Lease Type</span>
+                <span class="property-card__spec-value">NNN (Triple Net)</span>
+              </div>
+              <div class="property-card__spec">
+                <span class="property-card__spec-label">Location</span>
+                <span class="property-card__spec-value">Las Vegas, NV 89169</span>
+              </div>
+              <div class="property-card__spec">
+                <span class="property-card__spec-label">Traffic Count</span>
+                <span class="property-card__spec-value">High Visibility Corridor</span>
+              </div>
+              <div class="property-card__spec">
+                <span class="property-card__spec-label">Includes</span>
+                <span class="property-card__spec-value">Pumps, Canopy, C-Store</span>
+              </div>
+            </div>
+            <h4>Key Highlights</h4>
+            <ul class="property-card__highlights">
+              <li>Prime Paradise Road location — minutes from the Las Vegas Strip</li>
+              <li>Fully equipped with fuel pumps, canopy, and convenience store buildout</li>
+              <li>NNN lease structure — tenant responsible for taxes, insurance, and maintenance</li>
+              <li>High daily traffic counts and strong drive-by visibility</li>
+            </ul>
+            <div class="property-card__cta">
+              <p>For lease terms and additional details, contact:</p>
+              <a href="mailto:Farhad@FirstCapInvestment.com?subject=Inquiry%3A%20Gas%20Station%20-%204990%20Paradise%20Rd%20Las%20Vegas" class="btn btn--gold btn--sm">Request Information</a>
+              <a href="tel:+13102735393" class="btn btn--outline btn--sm">Call (310) 273-5393</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="property-card reveal">
+        <div class="property-card__image">
+          <img src="./parking-garage.jpg" alt="Parking Garage at 1900 S Industrial Rd, Las Vegas" class="property-card__photo">
+          <span class="property-card__badge">For Rent</span>
+        </div>
+        <div class="property-card__body">
+          <h3 class="property-card__title">Parking Garage</h3>
+          <div class="property-card__location">1900 S. Industrial Rd., Las Vegas, NV</div>
+          <div class="property-card__meta">
+            <span class="property-card__price">Contact for Pricing</span>
+            <span class="property-card__cap">For Rent</span>
+          </div>
+          <div class="property-card__details">
+            <span>320 Spaces</span>
+            <span>Covered Parking</span>
+            <span>EV Chargers</span>
+          </div>
+          <a href="javascript:void(0)" class="property-card__link" onclick="togglePropertyDetails('prop-parking-garage')">View Details →</a>
+        </div>
+        <div class="property-card__expanded" id="prop-parking-garage" style="display:none;">
+          <div class="property-card__expanded-inner">
+            <h4>Property Overview</h4>
+            <p>320-space parking garage available for rent at 1900 S. Industrial Road in Las Vegas, NV. Ideally situated near the Las Vegas Strip, this covered parking structure offers modern amenities including EV charging stations, making it an attractive opportunity for parking operators, event venues, hospitality companies, or fleet services.</p>
+            <div class="property-card__specs">
+              <div class="property-card__spec">
+                <span class="property-card__spec-label">Property Type</span>
+                <span class="property-card__spec-value">Parking Garage</span>
+              </div>
+              <div class="property-card__spec">
+                <span class="property-card__spec-label">Total Spaces</span>
+                <span class="property-card__spec-value">320</span>
+              </div>
+              <div class="property-card__spec">
+                <span class="property-card__spec-label">Parking Type</span>
+                <span class="property-card__spec-value">Covered / Structured</span>
+              </div>
+              <div class="property-card__spec">
+                <span class="property-card__spec-label">EV Charging</span>
+                <span class="property-card__spec-value">Yes — On-Site Chargers</span>
+              </div>
+              <div class="property-card__spec">
+                <span class="property-card__spec-label">Location</span>
+                <span class="property-card__spec-value">Las Vegas, NV 89102</span>
+              </div>
+              <div class="property-card__spec">
+                <span class="property-card__spec-label">Proximity</span>
+                <span class="property-card__spec-value">Minutes from the Strip</span>
+              </div>
+            </div>
+            <h4>Key Highlights</h4>
+            <ul class="property-card__highlights">
+              <li>320 covered parking spaces in a structured garage</li>
+              <li>EV charging stations installed — ready for electric vehicle demand</li>
+              <li>Prime location on S. Industrial Road, minutes from the Las Vegas Strip</li>
+              <li>Ideal for parking operators, hotel overflow, event parking, or fleet storage</li>
+              <li>Near Sahara Monorail Station and major Las Vegas Blvd. corridor</li>
+            </ul>
+            <div class="property-card__cta">
+              <p>For rental terms and additional details, contact:</p>
+              <a href="mailto:Farhad@FirstCapInvestment.com?subject=Inquiry%3A%20Parking%20Garage%20-%201900%20S%20Industrial%20Rd%20Las%20Vegas" class="btn btn--gold btn--sm">Request Information</a>
+              <a href="tel:+13102735393" class="btn btn--outline btn--sm">Call (310) 273-5393</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -240,7 +393,7 @@
     <div class="section-header reveal">
       <h2 class="section-title section-title--light">Our Services</h2>
       <div class="section-accent"></div>
-      <p class="section-subtitle section-subtitle--light">Comprehensive commercial real estate expertise tailored to your investment goals</p>
+      <p class="section-subtitle section-subtitle--light">Comprehensive real estate expertise for commercial investors and residential buyers &amp; sellers</p>
     </div>
     <div class="services__grid">
       <div class="service-card reveal">
@@ -252,7 +405,7 @@
           </svg>
         </div>
         <h3 class="service-card__title">Property Valuation &amp; Analysis</h3>
-        <p class="service-card__text">In-depth market analysis, comparable sales research, and income projections to determine accurate property valuations. We help you understand exactly what your commercial asset is worth.</p>
+        <p class="service-card__text">In-depth market analysis, comparable sales research, and income projections to determine accurate property valuations — for commercial investments and residential properties alike.</p>
         <a href="#cta-banner" class="service-card__link">Learn More →</a>
       </div>
       <div class="service-card reveal">
@@ -265,7 +418,7 @@
           </svg>
         </div>
         <h3 class="service-card__title">Listing &amp; Marketing</h3>
-        <p class="service-card__text">Professional marketing campaigns including photography, virtual tours, targeted outreach to qualified buyers, and exposure across top commercial listing platforms including LoopNet and CoStar.</p>
+        <p class="service-card__text">Professional marketing campaigns including photography, virtual tours, targeted outreach to qualified buyers, and exposure across top listing platforms — from LoopNet and CoStar to the MLS and residential networks.</p>
         <a href="#cta-banner" class="service-card__link">Learn More →</a>
       </div>
       <div class="service-card reveal">
@@ -301,13 +454,10 @@
       <div class="section-accent"></div>
     </div>
     <div class="about__story reveal">
-      <p>Founded in 1994, <strong>First Capital Investment Realty</strong> is a family-owned commercial real estate brokerage with offices in <strong>Beverly Hills</strong>, <strong>West Hills</strong>, and <strong>Claremont</strong>. For over 35 years, we have served investors, owners, and developers throughout the greater Los Angeles and Southern California markets — specializing in multifamily properties, retail centers, and value-add opportunities.</p>
+      <p>Founded in 1994, <strong>First Capital Investment Realty</strong> is a family-owned, full-service real estate brokerage with offices in <strong>Beverly Hills</strong>, <strong>West Hills</strong>, and <strong>Claremont</strong>. For over 35 years, we have served investors, property owners, home buyers, and sellers throughout the greater Los Angeles and Southern California markets — specializing in commercial investments, residential sales, multifamily properties, retail centers, and value-add opportunities.</p>
       <p>Our approach combines deep local market knowledge with institutional-grade analysis, giving our clients the insight and confidence to make informed investment decisions. We pride ourselves on personal service, integrity, and a long-term commitment to each client relationship.</p>
     </div>
-    <div class="team-photo reveal">
-      <img src="./team-photo.png" alt="The First Capital Investment Realty team" class="team-photo__img">
-      <p class="team-photo__caption">The FCIR Team</p>
-    </div>
+
     <div class="team__grid">
       <div class="team-card reveal">
         <div class="team-card__avatar team-card__avatar--1">
@@ -315,7 +465,7 @@
         </div>
         <h3 class="team-card__name">Abbas Navazi</h3>
         <p class="team-card__title">Founding Broker</p>
-        <p class="team-card__bio">With over 30 years of experience in Los Angeles commercial real estate, Abbas has guided hundreds of clients through complex investment transactions.</p>
+        <p class="team-card__bio">With over 30 years of experience in Los Angeles real estate, Abbas has guided hundreds of clients through complex commercial and residential transactions.</p>
         <p class="team-card__dre">DRE# 01234567</p>
       </div>
       <div class="team-card reveal">
@@ -324,7 +474,7 @@
         </div>
         <h3 class="team-card__name">Farhad Navazi</h3>
         <p class="team-card__title">Investment Broker</p>
-        <p class="team-card__bio">Farhad specializes in multifamily and value-add properties, bringing analytical rigor and a client-first approach to every transaction.</p>
+        <p class="team-card__bio">Farhad specializes in commercial investments, residential sales, and value-add properties, bringing analytical rigor and a client-first approach to every transaction.</p>
         <p class="team-card__dre">DRE# 01954850</p>
       </div>
       <div class="team-card reveal">
@@ -421,7 +571,7 @@
 <!-- CTA BANNER -->
 <section class="cta-banner" id="cta-banner">
   <div class="cta-banner__inner reveal">
-    <h2 class="cta-banner__title">Ready to Invest in Los Angeles Commercial Real Estate?</h2>
+    <h2 class="cta-banner__title">Ready to Buy, Sell, or Invest in Los Angeles Real Estate?</h2>
     <p class="cta-banner__text">Get a complimentary property valuation from our expert team</p>
     <button class="btn btn--gold btn--large" onclick="openValuationForm()">Request Free Valuation</button>
   </div>
@@ -465,6 +615,8 @@
           <label class="form-label" for="v-type">Property Type <span class="required">*</span></label>
           <select id="v-type" name="propertyType" required class="form-input">
             <option value="" disabled selected>Select type...</option>
+            <option value="single-family">Single-Family Home</option>
+            <option value="condo-townhome">Condo / Townhome</option>
             <option value="multifamily">Multifamily</option>
             <option value="retail">Retail</option>
             <option value="office">Office</option>
@@ -551,6 +703,7 @@
       <ul class="footer__list">
         <li><a href="#services">Property Valuation</a></li>
         <li><a href="#services">Listing & Marketing</a></li>
+        <li><a href="#services">Residential Sales</a></li>
         <li><a href="#services">Transaction Support</a></li>
         <li><a href="#services">Investment Analysis</a></li>
         <li><a href="#services">1031 Exchange</a></li>
@@ -558,7 +711,7 @@
     </div>
     <div class="footer__col">
       <h4 class="footer__heading">Newsletter</h4>
-      <p class="footer__newsletter-text">Stay informed on LA commercial real estate opportunities and market insights.</p>
+      <p class="footer__newsletter-text">Stay informed on LA real estate opportunities, market insights, and new listings.</p>
       <form class="footer__form" onsubmit="event.preventDefault(); alert('Thank you for subscribing! (Mock-up)');">
         <input type="email" placeholder="Your email address" class="footer__input" required aria-label="Email address for newsletter">
         <button type="submit" class="footer__submit">Subscribe</button>
