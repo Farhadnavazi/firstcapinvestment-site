@@ -777,6 +777,26 @@ img { max-width: 100%; display: block; }
 }
 .about__story strong { color: var(--white); font-weight: 600; }
 
+/* Team Photo */
+.team-photo {
+  text-align: center;
+  margin: 48px auto 56px;
+  max-width: 800px;
+}
+.team-photo__img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  border: 2px solid var(--white-10);
+}
+.team-photo__caption {
+  margin-top: 16px;
+  font-family: var(--font-display);
+  font-size: 18px;
+  color: var(--gold);
+  letter-spacing: 0.02em;
+}
+
 .team__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
