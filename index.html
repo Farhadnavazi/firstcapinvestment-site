@@ -383,6 +383,37 @@
   </div>
 </section>
 
+<!-- INSTAGRAM FEED -->
+<section class="instagram" id="instagram">
+  <div class="section-container">
+    <div class="section-header reveal">
+      <h2 class="section-title section-title--light">Follow Us on Instagram</h2>
+      <div class="section-accent"></div>
+      <p class="section-subtitle section-subtitle--light">Stay connected with the latest from First Capital Investment Realty</p>
+    </div>
+    <div class="instagram__feed reveal">
+      <div class="instagram__embed" id="instagramEmbed">
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/firstcapinvestment/" data-instgrm-version="14" style="background:#0f1d32; border:1px solid rgba(255,255,255,0.1); border-radius:12px; max-width:540px; min-width:326px; padding:0; width:calc(100% - 2px); margin:0 auto;">
+          <div style="padding:16px; display:flex; flex-direction:column; align-items:center; text-align:center;">
+            <a href="https://www.instagram.com/firstcapinvestment/" target="_blank" rel="noopener noreferrer" style="color:#c9a84c; text-decoration:none; font-family:'Playfair Display',serif; font-size:20px; margin-top:12px;">@firstcapinvestment</a>
+            <p style="color:rgba(255,255,255,0.7); font-size:14px; margin-top:8px;">Loading Instagram feed...</p>
+          </div>
+        </blockquote>
+      </div>
+    </div>
+    <div class="instagram__cta reveal">
+      <a href="https://www.instagram.com/firstcapinvestment/" target="_blank" rel="noopener noreferrer" class="btn btn--gold">
+        <svg viewBox="0 0 24 24" fill="none" width="20" height="20" style="vertical-align:middle;margin-right:8px;">
+          <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.5"/>
+          <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.5"/>
+          <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/>
+        </svg>
+        Follow @firstcapinvestment
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- CTA BANNER -->
 <section class="cta-banner" id="cta-banner">
   <div class="cta-banner__inner reveal">
@@ -557,5 +588,19 @@
 </footer>
 
 <script src="./app.js" defer></script>
+<script async src="https://www.instagram.com/embed.js"></script>
+<script>
+// Process Instagram embeds when script loads
+(function() {
+  var checkEmbed = setInterval(function() {
+    if (window.instgrm && window.instgrm.Embeds) {
+      window.instgrm.Embeds.process();
+      clearInterval(checkEmbed);
+    }
+  }, 500);
+  // Stop checking after 10 seconds
+  setTimeout(function() { clearInterval(checkEmbed); }, 10000);
+})();
+</script>
 </body>
 </html>

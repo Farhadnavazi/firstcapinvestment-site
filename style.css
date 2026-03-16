@@ -894,6 +894,49 @@ img { max-width: 100%; display: block; }
   letter-spacing: 1px;
 }
 
+/* --- INSTAGRAM FEED --- */
+.instagram {
+  padding: clamp(64px, 8vw, 112px) 0;
+  background: var(--navy-dark);
+}
+.instagram__feed {
+  max-width: 640px;
+  margin: 0 auto;
+}
+.instagram__embed {
+  display: flex;
+  justify-content: center;
+}
+.instagram__embed iframe {
+  border-radius: 12px !important;
+  max-width: 100% !important;
+}
+.instagram__embed .instagram-media {
+  margin: 0 auto !important;
+  border-radius: 12px !important;
+}
+.instagram__cta {
+  text-align: center;
+  margin-top: 36px;
+}
+.instagram__cta .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  font-size: 15px;
+  padding: 14px 32px;
+}
+
+@media (max-width: 768px) {
+  .instagram__embed {
+    padding: 0 4px;
+  }
+  .instagram__embed iframe {
+    max-width: 100% !important;
+    min-width: unset !important;
+  }
+}
+
 /* --- CTA BANNER --- */
 .cta-banner {
   padding: clamp(64px, 8vw, 96px) 0;
