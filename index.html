@@ -29,6 +29,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
 
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <link rel="stylesheet" href="./style.css">
 
 <!-- JSON-LD Structured Data -->
@@ -338,6 +339,46 @@
     </div>
     <div class="properties__more reveal">
       <a href="#" class="link-arrow" target="_blank" rel="noopener noreferrer">View All Properties →</a>
+    </div>
+  </div>
+</section>
+
+<!-- PROPERTY MAP -->
+<section class="prop-map" id="map-section">
+  <div class="section-container">
+    <div class="section-header reveal">
+      <h2 class="section-title">Our Market Coverage</h2>
+      <div class="section-accent"></div>
+      <p class="section-subtitle">50+ transactions across Los Angeles, Southern California &amp; Las Vegas</p>
+    </div>
+    <div class="prop-map__filters reveal">
+      <button class="prop-map__filter active" data-filter="all">All Properties</button>
+      <button class="prop-map__filter" data-filter="active">
+        <span class="prop-map__dot prop-map__dot--active"></span>Active Listings
+      </button>
+      <button class="prop-map__filter" data-filter="sold">
+        <span class="prop-map__dot prop-map__dot--sold"></span>Past Sales
+      </button>
+      <button class="prop-map__filter" data-filter="office">
+        <span class="prop-map__dot prop-map__dot--office"></span>Offices
+      </button>
+    </div>
+    <div class="prop-map__wrap reveal">
+      <div id="fcirMap" class="prop-map__canvas"></div>
+    </div>
+    <div class="prop-map__legend reveal">
+      <div class="prop-map__legend-item">
+        <span class="prop-map__dot prop-map__dot--active"></span>
+        <span>Active Listings</span>
+      </div>
+      <div class="prop-map__legend-item">
+        <span class="prop-map__dot prop-map__dot--sold"></span>
+        <span>Past Sales</span>
+      </div>
+      <div class="prop-map__legend-item">
+        <span class="prop-map__dot prop-map__dot--office"></span>
+        <span>FCIR Offices</span>
+      </div>
     </div>
   </div>
 </section>
@@ -812,6 +853,9 @@
 </footer>
 
 <script src="./app.js" defer></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="./map-data.js"></script>
+<script src="./map-init.js"></script>
 <script async src="https://www.instagram.com/embed.js"></script>
 <script>
 // Process Instagram embeds when script loads
