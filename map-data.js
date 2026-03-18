@@ -1,7 +1,7 @@
 var FCIR_PROPERTIES = [
     {lat:34.1721228,lng:-118.4490571,title:'91-Unit Senior Affordable Housing',address:'14715 Burbank Blvd, Van Nuys, CA 91401',price:'$5,250,000',type:'Development Project',category:'active'},
     {lat:36.1474896,lng:-115.1528756,title:'Gas Station / Market',address:'4990 Paradise Rd, Las Vegas, NV 89169',price:'$20,000/mo',type:'For Lease',category:'active'},
-    {lat:36.1543522,lng:-115.1579652,title:'Parking Garage',address:'1900 S Industrial Rd, Las Vegas, NV 89102',price:'Contact for Pricing',type:'For Lease',category:'active'},
+    {lat:36.14731,lng:-115.16219,title:'Fleet Operations Campus',address:'1900 S Industrial Rd, Las Vegas, NV 89102',price:'$150/space/mo',type:'For Lease',category:'active'},
     {lat:34.0647044,lng:-118.3836276,title:'Beverly Hills Office',address:'445 S Robertson Blvd, Beverly Hills, CA 90211',price:'',type:'Office',category:'office'},
     {lat:34.2032325,lng:-118.645476,title:'West Hills Office',address:'West Hills, CA 91307',price:'',type:'Office',category:'office'},
     {lat:34.0966764,lng:-117.7197785,title:'Claremont Office',address:'Claremont, CA 91711',price:'',type:'Office',category:'office'},
