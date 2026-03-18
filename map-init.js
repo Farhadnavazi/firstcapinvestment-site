@@ -13,8 +13,8 @@
   var NAVY = '#0a1628';
   var NAVY_MID = '#152542';
   var WHITE = '#ffffff';
-  var SOLD_COLOUR = '#6b8cae';   /* muted blue for sold */
-  var OFFICE_COLOUR = '#e8d5a0'; /* gold-pale for offices */
+  var SOLD_COLOUR = '#1B2A3D';   /* navy for sold */
+  var OFFICE_COLOUR = '#c9a84c'; /* gold for offices */
 
   /* --- Create Map ----------------------------------------------- */
   var map = L.map('fcirMap', {
@@ -27,8 +27,8 @@
 
   L.control.zoom({ position: 'topright' }).addTo(map);
 
-  /* Dark tile layer matching the navy brand */
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+  /* Light tile layer for clean white look */
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>',
     subdomains: 'abcd',
     maxZoom: 19
@@ -43,7 +43,7 @@
       /* Star shape for offices */
       svg = '<svg xmlns="http://www.w3.org/2000/svg" width="' + (s + 8) + '" height="' + (s + 8) + '" viewBox="0 0 24 24">' +
         '<polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" ' +
-        'fill="' + colour + '" stroke="' + WHITE + '" stroke-width="1.5"/></svg>';
+        'fill="' + colour + '" stroke="' + NAVY + '" stroke-width="1.5"/></svg>';
       return L.divIcon({
         className: 'fcir-marker fcir-marker--office',
         html: svg,
@@ -53,7 +53,7 @@
       });
     }
     svg = '<svg xmlns="http://www.w3.org/2000/svg" width="' + s + '" height="' + s + '">' +
-      '<circle cx="' + half + '" cy="' + half + '" r="' + (half - 1) + '" fill="' + colour + '" stroke="' + WHITE + '" stroke-width="1.5" opacity="0.92"/></svg>';
+      '<circle cx="' + half + '" cy="' + half + '" r="' + (half - 1) + '" fill="' + colour + '" stroke="' + NAVY + '" stroke-width="1.5" opacity="0.92"/></svg>';
     return L.divIcon({
       className: 'fcir-marker',
       html: svg,
