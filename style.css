@@ -1981,13 +1981,13 @@ select.form-input {
 
 .prop-map {
   padding: 96px 0 80px;
-  background: #f8f8f8;
+  background: var(--navy);
 }
 .prop-map .section-title {
-  color: var(--navy-dark);
+  color: #ffffff;
 }
 .prop-map .section-subtitle {
-  color: #666;
+  color: rgba(255,255,255,0.7);
 }
 .prop-map .section-accent {
   background: var(--gold);
@@ -2006,10 +2006,10 @@ select.form-input {
   align-items: center;
   gap: 7px;
   padding: 9px 20px;
-  border: 1px solid rgba(27,42,61,0.2);
+  border: 1px solid rgba(255,255,255,0.25);
   border-radius: 100px;
   background: transparent;
-  color: #555;
+  color: rgba(255,255,255,0.8);
   font-family: var(--font-body);
   font-size: 14px;
   font-weight: 500;
@@ -2019,7 +2019,7 @@ select.form-input {
 
 .prop-map__filter:hover {
   border-color: var(--gold);
-  color: var(--navy-dark);
+  color: #ffffff;
 }
 
 .prop-map__filter.active {
@@ -2041,7 +2041,7 @@ select.form-input {
 }
 
 .prop-map__dot--sold {
-  background: #1B2A3D;
+  background: rgba(255,255,255,0.6);
 }
 
 .prop-map__dot--office {
@@ -2051,8 +2051,8 @@ select.form-input {
 .prop-map__wrap {
   border-radius: 16px;
   overflow: hidden;
-  border: 1px solid rgba(0,0,0,0.08);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
 }
 
 .prop-map__canvas {
@@ -2074,7 +2074,7 @@ select.form-input {
   align-items: center;
   gap: 8px;
   font-size: 13px;
-  color: #666;
+  color: rgba(255,255,255,0.7);
   font-family: var(--font-body);
 }
 
