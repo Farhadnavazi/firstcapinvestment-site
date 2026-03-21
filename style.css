@@ -2006,10 +2006,10 @@ select.form-input {
   align-items: center;
   gap: 7px;
   padding: 9px 20px;
-  border: 1px solid rgba(255,255,255,0.25);
+  border: 1px solid #ffffff;
   border-radius: 100px;
-  background: transparent;
-  color: rgba(255,255,255,0.8);
+  background: #ffffff;
+  color: var(--navy-dark);
   font-family: var(--font-body);
   font-size: 14px;
   font-weight: 500;
@@ -2018,8 +2018,9 @@ select.form-input {
 }
 
 .prop-map__filter:hover {
+  background: var(--gold);
   border-color: var(--gold);
-  color: #ffffff;
+  color: var(--navy-dark);
 }
 
 .prop-map__filter.active {
