@@ -153,6 +153,37 @@ function submitValuationForm(e) {
   });
 }
 
+// --- Footer Newsletter Subscribe ---
+function submitFooterNewsletter(e) {
+  e.preventDefault();
+  var form = e.target;
+  var emailInput = form.querySelector('input[type="email"]');
+  var btn = form.querySelector('button');
+  var msg = form.closest('.footer__col').querySelector('.footer__form-msg');
+  var email = emailInput.value.trim();
+  if (!email) return;
+
+  btn.textContent = 'Subscribing...';
+  btn.disabled = true;
+  if (msg) { msg.textContent = ''; msg.className = 'footer__form-msg'; }
+
+  var params = 'EMAIL=' + encodeURIComponent(email) + '&' + MC_HONEYPOT + '=';
+
+  sendToMailchimp(params, function(resp) {
+    btn.textContent = 'Subscribe';
+    btn.disabled = false;
+    if (resp.result === 'success') {
+      if (msg) { msg.textContent = 'You\'re subscribed!'; msg.className = 'footer__form-msg footer__form-msg--success'; }
+      emailInput.value = '';
+    } else if (resp.msg && resp.msg.indexOf('already subscribed') > -1) {
+      if (msg) { msg.textContent = 'You\'re already on our list!'; msg.className = 'footer__form-msg footer__form-msg--success'; }
+      emailInput.value = '';
+    } else {
+      if (msg) { msg.textContent = 'Something went wrong. Please try again.'; msg.className = 'footer__form-msg footer__form-msg--error'; }
+    }
+  });
+}
+
 // --- Newsletter Subscribe ---
 function submitNewsletter(e) {
   e.preventDefault();

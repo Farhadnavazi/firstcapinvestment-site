@@ -1530,6 +1530,15 @@ img { max-width: 100%; display: block; }
 }
 .footer__submit:hover { background: var(--gold-light); }
 
+.footer__form-msg {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: var(--white-70);
+  min-height: 1.2em;
+}
+.footer__form-msg--success { color: #4ade80; }
+.footer__form-msg--error { color: #f87171; }
+
 .footer__social {
   display: flex;
   gap: 12px;
