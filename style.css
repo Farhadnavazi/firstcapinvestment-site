@@ -1223,9 +1223,9 @@ img { max-width: 100%; display: block; }
 /* Reviews Grid */
 .testimonials__grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 28px;
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 .testimonials__grid--centered {
@@ -1239,9 +1239,11 @@ img { max-width: 100%; display: block; }
   background: var(--navy);
   border: 1px solid var(--white-10);
   border-radius: 12px;
-  padding: 36px 32px;
+  padding: 28px 24px;
   position: relative;
   transition: border-color var(--transition-interactive);
+  display: flex;
+  flex-direction: column;
 }
 .testimonial-card:hover { border-color: var(--gold); }
 .testimonial-card--google {
@@ -1265,20 +1267,21 @@ img { max-width: 100%; display: block; }
 }
 .testimonial-card__quote {
   font-family: var(--font-display);
-  font-size: 64px;
+  font-size: 48px;
   color: var(--gold);
   line-height: 1;
-  margin-bottom: -16px;
+  margin-bottom: -12px;
   opacity: 0.6;
 }
 .testimonial-card__text {
-  font-size: 16px;
+  font-size: 14px;
   color: var(--white-70);
-  line-height: 1.75;
+  line-height: 1.7;
   font-style: italic;
   margin-bottom: 28px;
   border: none;
   padding: 0;
+  flex: 1;
 }
 .testimonial-card__author {
   display: flex;
@@ -1529,6 +1532,15 @@ img { max-width: 100%; display: block; }
   white-space: nowrap;
 }
 .footer__submit:hover { background: var(--gold-light); }
+
+.footer__form-msg {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: var(--white-70);
+  min-height: 1.2em;
+}
+.footer__form-msg--success { color: #4ade80; }
+.footer__form-msg--error { color: #f87171; }
 
 .footer__social {
   display: flex;
@@ -1972,13 +1984,13 @@ select.form-input {
 
 .prop-map {
   padding: 96px 0 80px;
-  background: #f8f8f8;
+  background: var(--navy);
 }
 .prop-map .section-title {
-  color: var(--navy-dark);
+  color: #ffffff;
 }
 .prop-map .section-subtitle {
-  color: #666;
+  color: rgba(255,255,255,0.7);
 }
 .prop-map .section-accent {
   background: var(--gold);
@@ -1997,10 +2009,10 @@ select.form-input {
   align-items: center;
   gap: 7px;
   padding: 9px 20px;
-  border: 1px solid rgba(27,42,61,0.2);
+  border: 1px solid #ffffff;
   border-radius: 100px;
-  background: transparent;
-  color: #555;
+  background: #ffffff;
+  color: var(--navy-dark);
   font-family: var(--font-body);
   font-size: 14px;
   font-weight: 500;
@@ -2009,6 +2021,7 @@ select.form-input {
 }
 
 .prop-map__filter:hover {
+  background: var(--gold);
   border-color: var(--gold);
   color: var(--navy-dark);
 }
@@ -2032,7 +2045,7 @@ select.form-input {
 }
 
 .prop-map__dot--sold {
-  background: #1B2A3D;
+  background: rgba(255,255,255,0.6);
 }
 
 .prop-map__dot--office {
@@ -2042,8 +2055,8 @@ select.form-input {
 .prop-map__wrap {
   border-radius: 16px;
   overflow: hidden;
-  border: 1px solid rgba(0,0,0,0.08);
-  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
 }
 
 .prop-map__canvas {
@@ -2065,7 +2078,7 @@ select.form-input {
   align-items: center;
   gap: 8px;
   font-size: 13px;
-  color: #666;
+  color: rgba(255,255,255,0.7);
   font-family: var(--font-body);
 }
 
