@@ -2045,11 +2045,21 @@ select.form-input {
 }
 
 .prop-map__dot--sold {
-  background: rgba(255,255,255,0.6);
+  background: #152542;
+  border: 1.5px solid rgba(255,255,255,0.5);
 }
 
 .prop-map__dot--office {
-  background: var(--gold-pale);
+  background: none;
+  width: auto;
+  height: auto;
+  border-radius: 0;
+}
+.prop-map__dot--office::before {
+  content: '\2605';
+  font-size: 14px;
+  color: var(--gold);
+  line-height: 1;
 }
 
 .prop-map__wrap {
