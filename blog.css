@@ -4,10 +4,11 @@
 
 /* --- BLOG HERO --- */
 .blog-hero {
-  background: var(--navy-darkest);
+  background: linear-gradient(180deg, rgba(10,22,40,0.72) 0%, rgba(10,22,40,0.88) 100%), url('la-aerial-blog.jpg') center 30% / cover no-repeat;
   border-bottom: 1px solid var(--white-10);
-  padding: calc(var(--header-h) + 48px) 24px 56px;
+  padding: calc(var(--header-h) + 64px) 24px 72px;
   text-align: center;
+  position: relative;
 }
 .blog-hero__inner {
   max-width: 700px;
