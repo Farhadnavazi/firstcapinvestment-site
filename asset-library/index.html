@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Asset Library &mdash; First Capital Investment Realty</title>
+  <link rel="icon" type="image/png" href="../fcir-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #1B2A4A;
+      --navy-deep: #0F1B33;
+      --gold: #C8A951;
+      --gold-light: #E5C97C;
+      --ink: #1F2937;
+      --muted: #6B7280;
+      --line: #E5E7EB;
+      --bg: #FAFAF7;
+      --surface: #FFFFFF;
+      --shadow: 0 1px 2px rgba(15, 27, 51, 0.06), 0 4px 12px rgba(15, 27, 51, 0.05);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+    .topbar {
+      background: var(--navy);
+      color: #fff;
+      padding: 20px 32px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      border-bottom: 3px solid var(--gold);
+    }
+    .topbar img { height: 36px; width: auto; }
+    .topbar .titles { display: flex; flex-direction: column; gap: 2px; }
+    .topbar h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+    }
+    .topbar .subtitle {
+      font-size: 12px;
+      color: var(--gold-light);
+      text-transform: uppercase;
+      letter-spacing: 1.6px;
+      font-weight: 500;
+    }
+    .topbar .badge {
+      margin-left: auto;
+      background: rgba(200, 169, 81, 0.15);
+      color: var(--gold-light);
+      border: 1px solid var(--gold);
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 11px;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    main { max-width: 1280px; margin: 0 auto; padding: 36px 32px 80px; }
+
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: 28px;
+    }
+    .search {
+      flex: 1;
+      min-width: 240px;
+      position: relative;
+    }
+    .search input {
+      width: 100%;
+      padding: 12px 16px 12px 42px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--surface);
+      font: inherit;
+      color: var(--ink);
+      transition: border-color 120ms, box-shadow 120ms;
+    }
+    .search input:focus {
+      outline: none;
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(200, 169, 81, 0.18);
+    }
+    .search svg {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 18px;
+      height: 18px;
+      color: var(--muted);
+    }
+    .stats {
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .stats strong { color: var(--navy); font-weight: 600; }
+    .refresh-btn {
+      background: var(--navy);
+      color: #fff;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font: inherit;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 120ms;
+    }
+    .refresh-btn:hover { background: var(--navy-deep); }
+
+    .upload-help {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-left: 3px solid var(--gold);
+      border-radius: 10px;
+      padding: 18px 22px;
+      margin-bottom: 28px;
+      box-shadow: var(--shadow);
+    }
+    .upload-help h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--navy);
+    }
+    .upload-help p { font-size: 13.5px; color: var(--muted); line-height: 1.6; }
+    .upload-help code {
+      font-family: 'JetBrains Mono', monospace;
+      background: #F3F4F6;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 12.5px;
+      color: var(--navy);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform 150ms, box-shadow 150ms;
+      display: flex;
+      flex-direction: column;
+    }
+    .card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(15, 27, 51, 0.08);
+    }
+    .preview {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      background:
+        repeating-conic-gradient(#F3F4F6 0% 25%, #E5E7EB 0% 50%) 50% / 16px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      cursor: zoom-in;
+    }
+    .preview img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+    .preview .placeholder {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 26px;
+      font-weight: 600;
+      color: var(--navy);
+      letter-spacing: 1.5px;
+    }
+    .card-body { padding: 14px 16px 16px; flex: 1; display: flex; flex-direction: column; gap: 10px; }
+    .card-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--navy);
+      word-break: break-all;
+    }
+    .meta {
+      display: flex;
+      gap: 10px;
+      font-size: 11.5px;
+      color: var(--muted);
+      flex-wrap: wrap;
+    }
+    .meta .ext {
+      background: rgba(200, 169, 81, 0.15);
+      color: var(--navy);
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-weight: 600;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+      font-size: 10.5px;
+    }
+    .btn-row { display: flex; gap: 8px; margin-top: auto; }
+    .btn {
+      flex: 1;
+      padding: 8px 10px;
+      font-size: 12px;
+      font-weight: 500;
+      border-radius: 7px;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--navy);
+      cursor: pointer;
+      font-family: inherit;
+      transition: background 120ms, border-color 120ms, color 120ms;
+    }
+    .btn:hover { background: var(--navy); color: #fff; border-color: var(--navy); }
+    .btn.primary {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: var(--navy);
+      font-weight: 600;
+    }
+    .btn.primary:hover { background: var(--gold-light); border-color: var(--gold-light); }
+    .btn.copied {
+      background: #166534 !important;
+      border-color: #166534 !important;
+      color: #fff !important;
+    }
+
+    .empty {
+      text-align: center;
+      padding: 80px 20px;
+      color: var(--muted);
+    }
+    .empty h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--navy);
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 27, 51, 0.92);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+      padding: 32px;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-width: 100%; max-height: 100%; object-fit: contain; box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
+    .lightbox .close {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      color: #fff;
+      background: none;
+      border: none;
+      font-size: 32px;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%) translateY(80px);
+      background: var(--navy);
+      color: #fff;
+      padding: 12px 22px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      box-shadow: 0 12px 32px rgba(0,0,0,0.25);
+      border-left: 3px solid var(--gold);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 180ms, transform 180ms;
+      z-index: 200;
+    }
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    @media (max-width: 600px) {
+      .topbar { padding: 16px 20px; }
+      .topbar h1 { font-size: 18px; }
+      main { padding: 24px 20px 60px; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="topbar">
+  <img src="../fcir-logo.png" alt="FCIR">
+  <div class="titles">
+    <h1>Asset Library</h1>
+    <span class="subtitle">First Capital Investment Realty</span>
+  </div>
+  <span class="badge">Private &middot; Not Indexed</span>
+</header>
+
+<main>
+
+  <div class="upload-help">
+    <h2>How to add new files</h2>
+    <p>
+      Drop files into <code>asset-library/uploads/</code>, run
+      <code>python3 asset-library/update-manifest.py</code> from the repo root, then commit and push.
+      Files become publicly accessible by direct URL within about a minute. This page is blocked from
+      search engines and is not linked from anywhere else on the site -- bookmark it.
+    </p>
+  </div>
+
+  <div class="toolbar">
+    <div class="search">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" stroke-width="2"/><path stroke-width="2" stroke-linecap="round" d="m20 20-3.5-3.5"/></svg>
+      <input id="search" type="search" placeholder="Search files by name or extension...">
+    </div>
+    <span class="stats" id="stats">Loading...</span>
+    <button class="refresh-btn" id="refresh">Refresh</button>
+  </div>
+
+  <div class="grid" id="grid"></div>
+
+  <div class="empty" id="empty" style="display:none;">
+    <h3>No files yet</h3>
+    <p>Drop files into <code>asset-library/uploads/</code> to get started.</p>
+  </div>
+
+</main>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <button class="close" onclick="closeLightbox(event)">&times;</button>
+  <img id="lightboxImg" alt="">
+</div>
+
+<div class="toast" id="toast">Copied to clipboard</div>
+
+<script>
+  const BASE_LIVE = "https://firstcapinvestment.com/asset-library/uploads/";
+  const BASE_RAW  = "https://raw.githubusercontent.com/Farhadnavazi/firstcapinvestment-site/main/asset-library/uploads/";
+  const BASE_LOCAL = "uploads/";
+
+  let allFiles = [];
+
+  function formatSize(bytes) {
+    if (bytes < 1024) return bytes + " B";
+    if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + " KB";
+    return (bytes / 1024 / 1024).toFixed(2) + " MB";
+  }
+
+  function showToast(msg) {
+    const t = document.getElementById("toast");
+    t.textContent = msg;
+    t.classList.add("show");
+    clearTimeout(window.__toastTimer);
+    window.__toastTimer = setTimeout(() => t.classList.remove("show"), 1600);
+  }
+
+  async function copyText(text, btn, label) {
+    try {
+      await navigator.clipboard.writeText(text);
+      const original = btn.textContent;
+      btn.textContent = "Copied";
+      btn.classList.add("copied");
+      showToast(label + " copied");
+      setTimeout(() => {
+        btn.textContent = original;
+        btn.classList.remove("copied");
+      }, 1300);
+    } catch (e) {
+      showToast("Copy failed -- select the URL manually");
+    }
+  }
+
+  function openLightbox(src) {
+    document.getElementById("lightboxImg").src = src;
+    document.getElementById("lightbox").classList.add("open");
+  }
+  function closeLightbox(e) {
+    if (e.target.id === "lightbox" || e.target.classList.contains("close")) {
+      document.getElementById("lightbox").classList.remove("open");
+    }
+  }
+
+  function renderCard(file) {
+    const liveUrl = BASE_LIVE + encodeURIComponent(file.name);
+    const rawUrl = BASE_RAW + encodeURIComponent(file.name);
+    const localUrl = BASE_LOCAL + encodeURIComponent(file.name);
+
+    const card = document.createElement("article");
+    card.className = "card";
+    card.dataset.name = file.name.toLowerCase();
+    card.dataset.ext = file.ext;
+
+    const preview = document.createElement("div");
+    preview.className = "preview";
+    if (file.is_image) {
+      const img = document.createElement("img");
+      img.src = localUrl;
+      img.alt = file.name;
+      img.loading = "lazy";
+      preview.appendChild(img);
+      preview.addEventListener("click", () => openLightbox(localUrl));
+    } else {
+      const ph = document.createElement("div");
+      ph.className = "placeholder";
+      ph.textContent = "." + file.ext.toUpperCase();
+      preview.appendChild(ph);
+    }
+
+    const body = document.createElement("div");
+    body.className = "card-body";
+    body.innerHTML = `
+      <div class="card-name">${file.name}</div>
+      <div class="meta">
+        <span class="ext">${file.ext}</span>
+        <span>${formatSize(file.size)}</span>
+        <span>${file.modified}</span>
+      </div>
+      <div class="btn-row">
+        <button class="btn primary" data-copy="${liveUrl}" data-label="Live URL">Copy URL</button>
+        <button class="btn" data-copy="${rawUrl}" data-label="Raw GitHub URL">Raw</button>
+        <a class="btn" href="${localUrl}" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:center;text-decoration:none;">Open</a>
+      </div>
+    `;
+    card.appendChild(preview);
+    card.appendChild(body);
+
+    body.querySelectorAll("button[data-copy]").forEach(b => {
+      b.addEventListener("click", () => copyText(b.dataset.copy, b, b.dataset.label));
+    });
+
+    return card;
+  }
+
+  function render(files) {
+    const grid = document.getElementById("grid");
+    const empty = document.getElementById("empty");
+    grid.innerHTML = "";
+    if (!files.length) {
+      empty.style.display = "block";
+    } else {
+      empty.style.display = "none";
+      files.forEach(f => grid.appendChild(renderCard(f)));
+    }
+  }
+
+  function applyFilter() {
+    const q = document.getElementById("search").value.trim().toLowerCase();
+    const filtered = !q ? allFiles : allFiles.filter(f =>
+      f.name.toLowerCase().includes(q) || f.ext.includes(q)
+    );
+    render(filtered);
+    document.getElementById("stats").innerHTML =
+      `<strong>${filtered.length}</strong> of <strong>${allFiles.length}</strong> file${allFiles.length === 1 ? "" : "s"}`;
+  }
+
+  async function loadManifest() {
+    try {
+      const res = await fetch("manifest.json?_=" + Date.now());
+      if (!res.ok) throw new Error("manifest fetch failed");
+      const data = await res.json();
+      allFiles = data.files || [];
+      applyFilter();
+    } catch (e) {
+      document.getElementById("stats").textContent = "Could not load manifest.json";
+      console.error(e);
+    }
+  }
+
+  document.getElementById("search").addEventListener("input", applyFilter);
+  document.getElementById("refresh").addEventListener("click", loadManifest);
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") document.getElementById("lightbox").classList.remove("open");
+  });
+
+  loadManifest();
+</script>
+
+</body>
+</html>

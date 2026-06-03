@@ -236,9 +236,28 @@ function togglePropertyDetails(id) {
   if (panel.style.display === 'none' || panel.style.display === '') {
     panel.style.display = 'block';
     link.textContent = 'Hide Details \u2191';
+
+    // Inject a "Hide Details" button at the bottom of the panel on first open
+    var inner = panel.querySelector('.property-card__expanded-inner');
+    if (inner && !inner.querySelector('.property-card__collapse')) {
+      var collapseBtn = document.createElement('a');
+      collapseBtn.href = 'javascript:void(0)';
+      collapseBtn.className = 'property-card__link property-card__collapse';
+      collapseBtn.style.display = 'inline-block';
+      collapseBtn.style.marginTop = '1.5rem';
+      collapseBtn.textContent = 'Hide Details \u2191';
+      collapseBtn.onclick = function () { togglePropertyDetails(id); };
+      inner.appendChild(collapseBtn);
+    }
+
     panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   } else {
     panel.style.display = 'none';
     link.textContent = 'View Details \u2192';
+    // Scroll the card itself back into view so the user knows it collapsed
+    var card = panel.closest('.property-card');
+    if (card) {
+      card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }
 }
