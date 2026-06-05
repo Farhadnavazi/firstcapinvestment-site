@@ -1,5 +1,6 @@
 var FCIR_PROPERTIES = [
-    // HIDDEN: {lat:34.1721228,lng:-118.4490571,title:'91-Unit Senior Affordable Housing',address:'14715 Burbank Blvd, Van Nuys, CA 91401',price:'$5,250,000',type:'Development Project',category:'active'},
+    {lat:34.1721228,lng:-118.4490571,title:'91-Unit RTI Development Site',address:'14715 W. Burbank Blvd, Van Nuys, CA 91411',price:'$3,098,000',type:'Senior Affordable Dev Site',category:'active'},
+    {lat:34.2025,lng:-118.5950,title:'10-Unit Multifamily',address:'8000 Owensmouth Ave, Canoga Park, CA 91304',price:'$2,249,000',type:'Multifamily',category:'active'},
     {lat:36.1474896,lng:-115.1528756,title:'Gas Station / Market',address:'4990 Paradise Rd, Las Vegas, NV 89169',price:'$20,000/mo',type:'For Lease',category:'active'},
     {lat:36.14731,lng:-115.16219,title:'Fleet Operations Campus',address:'1900 S Industrial Rd, Las Vegas, NV 89102',price:'$150/space/mo',type:'For Lease',category:'active'},
     {lat:34.0647044,lng:-118.3836276,title:'Beverly Hills Office',address:'445 S Robertson Blvd, Beverly Hills, CA 90211',price:'',type:'Office',category:'office'},
